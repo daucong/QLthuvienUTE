@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.qlthuvienute">
+    package="com.example.librarydemo">
 
     <application
         android:allowBackup="true"
@@ -8,13 +8,37 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.QLthuvienUTE">
+        android:theme="@style/AppTheme">
+        <activity android:name=".Login"></activity>
+        <activity android:name=".NewPassword" />
         <activity
-            android:name=".sign_up_now"
-            android:exported="true" />
+            android:name=".CodeForgotPassword"
+           />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ForgotPassword"
+            android:parentActivityName=".Login" />
+        <activity
+            android:name=".UpdateBook"
+            />
+        <activity
+            android:name=".ArrayLog"
+             />
+        <activity
+            android:name=".ChangPass"
+             />
+        <activity
+            android:name=".UserInformation" />
+        <activity
+            android:name=".LogInformation"
+            />
+        <activity
+            android:name=".BookInformation"
+             />
+        <activity
+            android:name=".LayOutAndLisView"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
