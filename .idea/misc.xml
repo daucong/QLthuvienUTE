@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/drawable/custom_btnlogin.xml" value="0.26944444444444443" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/drawable/custom_input.xml" value="0.2777777777777778" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/drawable/ic_launcher_background.xml" value="0.28055555555555556" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/drawable/round.xml" value="0.28055555555555556" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/login.xml" value="0.27447916666666666" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_main.xml" value="0.1634963768115942" />
       </map>
     </option>

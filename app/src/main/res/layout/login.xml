@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3B8666"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/UTE_lib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="100dp"
+        android:fontFamily="sans-serif-light"
+        android:text="UTE Library"
+        android:textColor="@color/white"
+        android:textSize="36dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/account"
+        android:layout_below="@+id/UTE_lib"
+        android:layout_margin="15dp"
+        android:textSize="28dp"
+        android:padding="10dp"
+        android:background="@drawable/custom_input"
+        android:hint="Username"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pass"
+        android:layout_below="@+id/account"
+        android:layout_margin="15dp"
+        android:textSize="28dp"
+        android:padding="10dp"
+        android:background="@drawable/custom_input"
+        android:hint="Password"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_Login"
+        android:text="Đăng nhập"
+        android:background="@drawable/custom_btnlogin"
+        android:layout_below="@+id/pass"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/forgot"
+        android:text="Quên mật khẩu?"
+        android:layout_below="@id/btn_Login"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:textColor="@color/white"
+        android:textSize="14dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create"
+        android:text="Chưa có tài khoản? Tọa ngay."
+        android:layout_below="@id/forgot"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:textColor="@color/white"
+        android:textSize="14dp"/>
+
+
+</RelativeLayout>
