@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QLthuvienUTE">
         <activity
+            android:name=".sign_up_now"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
