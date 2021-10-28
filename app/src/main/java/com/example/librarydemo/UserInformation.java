@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.librarydemo.DBUser.User;
+import com.example.librarydemo.Database.SQLSever;
 
 public class UserInformation extends AppCompatActivity {
     @Override
@@ -13,14 +14,16 @@ public class UserInformation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_information);
 
-        final TextView infor_acccount = (TextView) findViewById(R.id.info_account1);
-        final TextView infor_fullname = (TextView) findViewById(R.id.info_fullname);
-        final TextView infor_email = (TextView) findViewById(R.id.info_email);
-        final TextView infor_status = (TextView) findViewById(R.id.info_status);
-        final TextView infor_quyen = (TextView) findViewById(R.id.info_quyen);
+        TextView infor_acccount = (TextView) findViewById(R.id.info_account1);
+        TextView infor_fullname = (TextView) findViewById(R.id.info_fullname);
+        TextView infor_email = (TextView) findViewById(R.id.info_email);
+        TextView infor_status = (TextView) findViewById(R.id.info_status);
+        TextView infor_quyen = (TextView) findViewById(R.id.info_quyen);
         ImageView anh = (ImageView) findViewById(R.id.image_Avatar);
         anh.setImageResource(R.drawable.user_icon);
-        User s = LayOutAndLisView.getUser();
+        String name = Login.EXTRA_USER;
+        final SQLSever sqlSever = new SQLSever(this);
+        User s = sqlSever.getUser(name);
         infor_acccount.setText(s.getAccount());
         infor_fullname.setText(s.getFullname());
         infor_email.setText(s.getGmail());

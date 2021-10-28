@@ -7,7 +7,10 @@
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_book_information.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_chang_pass.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_code_forgot_password.xml" value="0.25" />
+        <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_detai.xml" value="0.1" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
+        <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_home1.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_lay_out_and_lis_view.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_log_information.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_login.xml" value="0.25" />
@@ -19,9 +22,11 @@
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/app_bar_lay_out_and_lis_view.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/content_lay_out_and_lis_view.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/elemen_book.xml" value="0.25" />
+        <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/item_danhmuc.xml" value="0.1864754098360656" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/nav_header_lay_out_and_lis_view.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/menu/activity_lay_out_and_lis_view_drawer.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/menu/lay_out_and_lis_view.xml" value="0.25" />
+        <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.199609375" />
         <entry key="..\:/android/QuanLyThuVien/Librarydemo/app/src/main/res/drawable/btn_bg.xml" value="0.265625" />
         <entry key="..\:/android/QuanLyThuVien/Librarydemo/app/src/main/res/drawable/et_bg.xml" value="0.1675925925925926" />
         <entry key="..\:/android/QuanLyThuVien/Librarydemo/app/src/main/res/drawable/grad_bg.xml" value="0.26614583333333336" />

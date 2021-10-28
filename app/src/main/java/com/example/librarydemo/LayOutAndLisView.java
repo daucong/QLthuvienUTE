@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.librarydemo.DBBook.Book;
 import com.example.librarydemo.DBBook.BookAdapter;
@@ -66,7 +67,8 @@ public class LayOutAndLisView extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lay_out_and_lis_view);
-
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
         AnhXa();
         ArrayBook();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -78,8 +80,7 @@ public class LayOutAndLisView extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     public void ArrayBook(){
@@ -115,16 +116,17 @@ public class LayOutAndLisView extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.lay_out_and_lis_view, menu);
+
+
+        Intent intent = getIntent();
+        String name = Login.EXTRA_USER;
+        final SQLSever sqlSever = new SQLSever(this);
         TextView ten = (TextView) findViewById(R.id.Text_Name);
         TextView email = (TextView) findViewById(R.id.Text_Gmail);
         TextView trangthai = (TextView) findViewById(R.id.Text_TrangThai);
 
-        Intent intent = getIntent();
-        final String tt_acc = intent.getStringExtra(Login.EXTRA_USER);
-        final SQLSever sqlSever = new SQLSever(this);
-        User s = sqlSever.getUser(tt_acc);
+        User s = sqlSever.getUser(name);
 
         ten.setText(s.getFullname());
         email.setText(s.getGmail());

@@ -63,7 +63,6 @@ public class SQLSever extends SQLiteOpenHelper {
         values.put(Status, user.getStatus());
         values.put(Quyen, user.getQuyen());
         db.insert(Table_Name1, null, values);
-        db.close();
     }
 
     public ArrayList<User> getArrayUser(){
@@ -86,16 +85,14 @@ public class SQLSever extends SQLiteOpenHelper {
         }else{
             list = null;
         }
-        cursor.close();
-        db.close();
         return list;
     }
     public User getUser(String account){
-
-        db = this.getWritableDatabase();
-        Cursor cursor = db.query(Table_Name1, new String[]{UserID, Account, FullName, Email, Password, Status , Quyen},
-                Account + "=?", new String[]{account}, null, null, null,null);
         User s = new User();
+        db = this.getWritableDatabase();
+        Cursor cursor = db.query(Table_Name1, new String[]{UserID,Account, FullName, Email, Password, Status , Quyen},
+                "Account=?", new String[]{String.valueOf(account)}, null, null, null,null);
+
         if(cursor.moveToFirst()){
             s.setUserID(cursor.getInt(0));
             s.setAccount(cursor.getString(1));
@@ -107,8 +104,6 @@ public class SQLSever extends SQLiteOpenHelper {
         }else{
             s = null;
         }
-        cursor.close();
-        db.close();
         return s;
     }
     public boolean Changpass(String account, String newpass){

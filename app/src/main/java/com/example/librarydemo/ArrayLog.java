@@ -37,7 +37,6 @@ public class ArrayLog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_log);
-
         ListView lvlog = (ListView) findViewById(R.id.arraylog);
 
         final SQLLog sqlLog = new SQLLog(this);

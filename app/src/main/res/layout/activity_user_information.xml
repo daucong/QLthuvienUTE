@@ -164,8 +164,8 @@
             android:id="@+id/info_fullname"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="68dp"
-            android:layout_marginLeft="68dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
             android:layout_marginTop="32dp"
             android:text="Đậu Thái Công"
             android:textColor="@android:color/white"
@@ -174,37 +174,11 @@
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <TextView
-            android:id="@+id/info_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="72dp"
-            android:layout_marginLeft="72dp"
-            android:layout_marginTop="32dp"
-            android:text="Đậu Thái Công"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            app:layout_constraintStart_toEndOf="@+id/info_email1"
-            app:layout_constraintTop_toBottomOf="@+id/info_fullname1" />
-
-        <TextView
-            android:id="@+id/info_status"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="480dp"
-            android:text="Đậu Thái Công"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            app:layout_constraintStart_toEndOf="@+id/info_status1"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/info_quyen"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginStart="68dp"
-            android:layout_marginLeft="68dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
             android:layout_marginTop="32dp"
             android:text="Đậu Thái Công"
             android:textColor="@android:color/white"
@@ -213,12 +187,38 @@
             app:layout_constraintTop_toBottomOf="@+id/info_status1" />
 
         <TextView
+            android:id="@+id/info_status"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="481dp"
+            android:text="Đậu Thái Công"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/info_status1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/info_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="32dp"
+            android:text="Đậu Thái Công"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/info_email1"
+            app:layout_constraintTop_toBottomOf="@+id/info_fullname1" />
+
+        <TextView
             android:id="@+id/info_ghichu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="34dp"
             android:text="Mô Tả"
             android:textColor="@android:color/white"
             android:textSize="18sp"
