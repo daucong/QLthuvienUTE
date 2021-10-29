@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
         ImageView Loading_library = findViewById(R.id.loading_library);
         Glide.with(this).load(R.drawable.giphy1).into(Loading_library);
        // Loading_library.setImageResource();
-        iconlibrary.setImageResource(R.drawable.splash1);
+        iconlibrary.setImageResource(R.drawable.books_library_1768);
         wellcomlibrary.setText("\"Chào mừng bạn đến với ứng dụng quản lý thư viện\"");
         new Handler().postDelayed(new Runnable() {
             @Override

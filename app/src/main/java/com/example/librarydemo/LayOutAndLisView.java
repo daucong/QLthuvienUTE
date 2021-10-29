@@ -85,7 +85,18 @@ public class LayOutAndLisView extends AppCompatActivity
 
     public void ArrayBook(){
         SQLBook sqlBook = new SQLBook(this);
-        ArrayList<Book> book = sqlBook.getAllBook();
+        ArrayList<Book> book = new ArrayList<>();
+        book.add(new Book(1, "Để Con Được Ốm", "Sách Tự Lực", "Uyên Bùi - BS. Trí Đoàn","2016",R.drawable.book_1, 100));
+        book.add(new Book(2, "Đọc Vị Bất Kỳ Ai", "Sách Tự Lực", "TS. David J. Lieberman","2015",R.drawable.book_2, 100));
+        book.add(new Book(3, "Nghệ Thuật Bán Hàng Bậc Cao", "Nghề Bán Hàng", "Zig Zig Lar","2008",R.drawable.book_3, 100));
+        book.add(new Book(4, "Dấn Thân", "Tiểu Sử", "Sheryl Sandberg","2014",R.drawable.book_4, 100));
+        book.add(new Book(5, "Sức Mạnh Của Ngôn Từ", "Văn học", "Vô Danh","TB-2018",R.drawable.book_5, 100));
+        book.add(new Book(6, "Đắc Nhân Tâm", "Phi Hư Cấu", "Dale Carnegie","2013",R.drawable.book_7, 100));
+        book.add(new Book(7, "Nhà Giả Kim", "Tiểu Thuyết", "Paulo Coelho","2013",R.drawable.book_9, 100));
+
+        for(Book x: book){
+            sqlBook.AddBook(x);
+        }
         adapter = new BookAdapter(this, R.layout.elemen_book, book);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -141,16 +152,8 @@ public class LayOutAndLisView extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_Search) {
-            return true;
-        }
         if (id == R.id.action_Log) {
             Intent intent = new Intent(this, ArrayLog.class);
-            startActivity(intent);
-            return true;
-        }
-        if (id == R.id.action_UpdateBook) {
-            Intent intent = new Intent(this, UpdateBook.class);
             startActivity(intent);
             return true;
         }

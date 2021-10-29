@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,9 @@ public class BookInformation extends AppCompatActivity {
         TextView tt_namXB = (TextView) findViewById(R.id.tt_NamXB);
         TextView tt_soluong = (TextView) findViewById(R.id.tt_SoLuong);
         Button tt_muon = (Button) findViewById(R.id.tt_btMuon);
+        TextView tt_score = (TextView) findViewById(R.id.item_book_score2);
+        TextView tt_page = (TextView) findViewById(R.id.item_book_pagesrev2);
+        RatingBar rb_bar = (RatingBar) findViewById(R.id.item_book_ratingbar2);
 
         final SQLBook sqlBook = new SQLBook(this);
         final int bookid = LayOutAndLisView.getBookid();
@@ -47,7 +51,7 @@ public class BookInformation extends AppCompatActivity {
         tt_tacgia.setText("Tác Giả : " + book.getTacGia());
         tt_namXB.setText("Năm Xuất Bản: " + book.getNamXB());
         tt_soluong.setText("Số Lượng : " + book.getSoLuong() + " Quyển");
-
+        final SQLSever sqlSever = new SQLSever(this);
         final SQLLog sqlLog = new SQLLog(this);
         tt_muon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +64,8 @@ public class BookInformation extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        User s = LayOutAndLisView.getUser();
+                        String name = Login.EXTRA_USER;
+                        User s = sqlSever.getUser(name);
                         Log log = new Log(s.getAccount(),book.getBookID(), book.getTenSach(), getDate());
                         sqlLog.AddLog(log);
                         sqlBook.UpdateSoLuongBook(book.getSoLuong()-1, book.getBookID());

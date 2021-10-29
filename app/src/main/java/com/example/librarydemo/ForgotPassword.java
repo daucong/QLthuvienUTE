@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ForgotPassword extends Activity {
-    public static final String EXTRA_CODE = "com.example.application.example.EXTRA_CODE";
+    public static final String EXTRA_CODE =  Login.EXTRA_USER;
     public static String getAccount() {
         return Account;
     }

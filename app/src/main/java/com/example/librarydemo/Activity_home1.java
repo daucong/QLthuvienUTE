@@ -38,11 +38,12 @@ public class Activity_home1 extends AppCompatActivity implements OnItemClickList
     private List<home> getHomeList(){
         List<home> list = new ArrayList<>();
         list.add(new home(R.drawable.user_icon, "Tài khoản"));
-        list.add(new home(R.drawable.home, "Danh mục"));
-        list.add(new home(R.mipmap.ic_launcher, "Thêm sách"));
-        list.add(new home(R.mipmap.ic_launcher, "Sách đã mượn"));
-        list.add(new home(R.mipmap.ic_launcher, "Thông báo"));
-        list.add(new home(R.mipmap.ic_launcher, "Liên hệ"));
+        list.add(new home(R.drawable.photo_picture_photo_184, "Danh mục"));
+        list.add(new home(R.drawable.addressbook_addressbook_add_librodedireccion_2815, "Thêm sách"));
+        list.add(new home(R.drawable.addressbook_addressbook_edition_librodedireccion_2817, "Sách đã mượn"));
+        list.add(new home(R.drawable.addressbook_addressbook_search_librodedireccion_2818, "Tìm kiếm sách"));
+        list.add(new home(R.drawable.call_825, "Liên hệ"));
+        list.add(new home(R.drawable.systemshutdown_103390, "Đăng xuất"));
         return list;
     }
     @Override
@@ -62,6 +63,18 @@ public class Activity_home1 extends AppCompatActivity implements OnItemClickList
         }
         if (a.getName()=="Sách đã mượn"){
             Intent intent = new Intent(this, ArrayLog.class); //LayOutAndLisView.class);
+            startActivity(intent);
+        }
+        if (a.getName()=="Tìm kiếm sách"){
+            Intent intent = new Intent(this, LayOutAndLisView.class); //LayOutAndLisView.class);
+            startActivity(intent);
+        }
+        if (a.getName()=="Liên hệ"){
+            Intent intent = new Intent(this, UpdateBook.class); //LayOutAndLisView.class);
+            startActivity(intent);
+        }
+        if (a.getName()=="Đăng xuất"){
+            Intent intent = new Intent(this, Login.class); //LayOutAndLisView.class);
             startActivity(intent);
         }
     }

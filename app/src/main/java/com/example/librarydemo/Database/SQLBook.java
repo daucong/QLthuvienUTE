@@ -91,14 +91,16 @@ public class SQLBook extends SQLiteOpenHelper {
         String selectbook = "select * from " + Table_Name3;
         db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectbook, null);
-        if(cursor.moveToFirst()){
-            do{
-                list.add(new Book(cursor.getInt(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4), cursor.getInt(5),cursor.getInt(6) ));
-            }while (cursor.moveToNext());
-        }else{
-            list = null;
+        if(cursor != null) {
+            if (cursor.getCount() > 0) {
+                for (cursor.move(0); cursor.moveToNext(); cursor.isAfterLast()) {
+                    list.add(new Book(cursor.getInt(0), cursor.getString(1),
+                            cursor.getString(2), cursor.getString(3), cursor.getString(4),
+                            cursor.getInt(5), cursor.getInt(6)));
+                }
+            }
         }
-        cursor.close();
+            cursor.close(); // close your cursor when you don't need it anymore
         db.close();
         return list;
     }

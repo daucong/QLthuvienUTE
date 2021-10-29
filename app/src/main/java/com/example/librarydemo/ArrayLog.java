@@ -16,6 +16,7 @@ import com.example.librarydemo.DBLog.Log;
 import com.example.librarydemo.DBUser.User;
 import com.example.librarydemo.Database.SQLBook;
 import com.example.librarydemo.Database.SQLLog;
+import com.example.librarydemo.Database.SQLSever;
 
 import java.util.ArrayList;
 
@@ -41,6 +42,7 @@ public class ArrayLog extends AppCompatActivity {
 
         final SQLLog sqlLog = new SQLLog(this);
         final SQLBook sqlBook = new SQLBook(this);
+        final SQLSever sqlSever = new SQLSever(this);
         User s = LayOutAndLisView.getUser();
         final ArrayList<Log> log = sqlLog.getAllLogs();
         if(log != null){

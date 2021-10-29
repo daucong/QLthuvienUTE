@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import com.example.librarydemo.DBBook.Book;
 import com.example.librarydemo.DBLog.Log;
 
 import java.util.ArrayList;
@@ -64,12 +65,12 @@ public class SQLLog extends SQLiteOpenHelper {
         String selectLog = "select * from " + Table_Name2;
         db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectLog, null);
-        if(cursor.moveToFirst()){
-            do{
-                list.add(new Log(cursor.getInt(0),cursor.getString(1),cursor.getInt(2),cursor.getString(3),cursor.getString(4)));
-            }while (cursor.moveToNext());
-        }else{
-            list = null;
+        if(cursor != null) {
+            if (cursor.getCount() > 0) {
+                for (cursor.move(0); cursor.moveToNext(); cursor.isAfterLast()) {
+                    list.add(new Log(cursor.getInt(0),cursor.getString(1),cursor.getInt(2),cursor.getString(3),cursor.getString(4)));
+                }
+            }
         }
         cursor.close();
         db.close();

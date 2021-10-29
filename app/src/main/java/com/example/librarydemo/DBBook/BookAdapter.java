@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.librarydemo.R;
@@ -39,8 +40,9 @@ public class BookAdapter extends BaseAdapter {
     }
 
     public class ViewAnhXa{
-        TextView tensach, tacgia, theloai, soluong;
-        ImageView imgsach;
+        TextView tensach, tacgia, theloai, soluong, score, page;
+        ImageView imgsach, imgtim;
+        RatingBar ratingBar;
     }
 
     @Override
@@ -53,9 +55,13 @@ public class BookAdapter extends BaseAdapter {
             //Ánh Xạ View
             viewAnhXa.tensach= (TextView) convertView.findViewById(R.id.ten_sach);
             viewAnhXa.tacgia = (TextView) convertView.findViewById(R.id.tac_gia);
+            viewAnhXa.score= (TextView) convertView.findViewById(R.id.item_book_score);
+            viewAnhXa.page = (TextView) convertView.findViewById(R.id.item_book_pagesrev);
             viewAnhXa.theloai = (TextView) convertView.findViewById(R.id.the_loai);
             viewAnhXa.soluong = (TextView) convertView.findViewById(R.id.so_luong);
+            viewAnhXa.imgtim = (ImageView) convertView.findViewById(R.id.imageView3);
             viewAnhXa.imgsach = (ImageView) convertView.findViewById(R.id.img_hinh);
+            viewAnhXa.ratingBar = (RatingBar) convertView.findViewById(R.id.item_book_ratingbar);
             convertView.setTag(viewAnhXa);
         }else{
             viewAnhXa = (ViewAnhXa) convertView.getTag();
