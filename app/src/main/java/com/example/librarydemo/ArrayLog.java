@@ -42,8 +42,9 @@ public class ArrayLog extends AppCompatActivity {
 
         final SQLLog sqlLog = new SQLLog(this);
         final SQLBook sqlBook = new SQLBook(this);
+        String name = Login.EXTRA_USER;
         final SQLSever sqlSever = new SQLSever(this);
-        User s = LayOutAndLisView.getUser();
+        User s = sqlSever.getUser(name);
         final ArrayList<Log> log = sqlLog.getAllLogs();
         if(log != null){
            ArrayList<Book> booklog = new ArrayList<>();

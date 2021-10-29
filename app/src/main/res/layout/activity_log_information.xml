@@ -32,7 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="146dp"
             android:layout_marginTop="116dp"
-            android:background="@drawable/avt"
+            android:background="@drawable/thumb2_library_concepts_stack_of_books_education_background_books_background_with_books"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline"

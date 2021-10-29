@@ -87,7 +87,7 @@ public class BookInformation extends AppCompatActivity {
     }
     //lấy ngày hiện tại
     private String getDate(){
-        DateFormat dateFormatter = new SimpleDateFormat("yyyyMMdd");
+        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
         dateFormatter.setLenient(false);
         Date today = new Date();
         String getdate = dateFormatter.format(today);
