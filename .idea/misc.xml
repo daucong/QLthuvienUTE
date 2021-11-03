@@ -3,6 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_array_log.xml" value="0.14375" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_book_information.xml" value="0.14375" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_chang_pass.xml" value="0.14375" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_code_forgot_password.xml" value="0.1381340579710145" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_forgot_password.xml" value="0.14375" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_home1.xml" value="0.14375" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_lay_out_and_lis_view.xml" value="0.14375" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_log_information.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_login.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_main.xml" value="0.1381340579710145" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_new_password.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_sign_up.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_slider_photo.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_update_book.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/activity_user_information.xml" value="0.2" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/app_bar_lay_out_and_lis_view.xml" value="0.2" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/content_lay_out_and_lis_view.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/elemen_book.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/item_danhmuc.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/item_photo.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Anh/Desktop/QLthuvienUTE/app/src/main/res/layout/nav_header_lay_out_and_lis_view.xml" value="0.14791666666666667" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_array_log.xml" value="0.25" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_book.xml" value="0.1578125" />
         <entry key="..\:/android/BT cuoiky/QLthuvienUTE/app/src/main/res/layout/activity_book_details.xml" value="0.1578125" />

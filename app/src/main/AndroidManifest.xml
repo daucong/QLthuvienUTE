@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".DBBook.Book1Adapter"
-            android:exported="true" />
-        <activity
-            android:name=".DanhmucActivity"
-            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".DBBook.Book1Adapter"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".DanhmucActivity"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".Activity_home1"
             android:exported="true" />
@@ -34,13 +34,14 @@
             android:name=".LayOutAndLisView"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignUp" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".PhotoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
