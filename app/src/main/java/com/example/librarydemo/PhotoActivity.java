@@ -46,6 +46,7 @@ public class PhotoActivity extends AppCompatActivity {
     private void OpenLogin() {
         Intent intent = new Intent(PhotoActivity.this, Login.class);
         startActivity(intent);
+        finish();
     }
 
     private List<Photo> getListPhoto() {

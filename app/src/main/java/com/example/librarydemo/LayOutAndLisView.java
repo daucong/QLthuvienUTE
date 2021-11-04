@@ -91,8 +91,11 @@ public class LayOutAndLisView extends AppCompatActivity
         book.add(new Book(3, "Dấn Thân", "Tiểu Sử", "Sheryl Sandberg","2014",R.drawable.book_3, 100));
         book.add(new Book(4, "Sức Mạnh Của Ngôn Từ", "Văn học", "Vô Danh","TB-2018",R.drawable.book_4, 100));
         book.add(new Book(5, "Đắc Nhân Tâm", "Phi Hư Cấu", "Dale Carnegie","2013",R.drawable.book_5, 100));
-        book.add(new Book(6, "Nhà Giả Kim", "Tiểu Thuyết", "Paulo Coelho","2013",R.drawable.book_6, 100));
-
+        book.add(new Book(6, "Truyện kiều", "Tiểu Thuyết", "Nguyễn Du","1832",R.drawable.book_6, 100));
+        book.add(new Book(7, "Sức Mạnh Của Ngôn Từ", "Văn học", "Vô Danh","TB-2018",R.drawable.book_7, 100));
+        book.add(new Book(8, "Đắc Nhân Tâm", "Phi Hư Cấu", "Dale Carnegie","2013",R.drawable.book_8, 100));
+        book.add(new Book(9, "Nhà Giả Kim", "Tiểu Thuyết", "Paulo Coelho","2013",R.drawable.book_9, 100));
+            book.add(new Book(10, "Nhà Giả Kim", "Tiểu Thuyết", "Paulo Coelho","2013",R.drawable.book_10, 100));
         for(Book x: book){
             sqlBook.AddBook(x);
         }
@@ -101,7 +104,6 @@ public class LayOutAndLisView extends AppCompatActivity
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ArrayBook();
                 LayOutAndLisView.setBookid(position+1);
                 OpenThongTinSach();
             }
@@ -110,7 +112,6 @@ public class LayOutAndLisView extends AppCompatActivity
 
     public void OpenThongTinSach(){
         Intent intent = new Intent(this, BookInformation.class);
-        ArrayBook();
         startActivity(intent);
     }
     public void AnhXa(){
@@ -155,6 +156,12 @@ public class LayOutAndLisView extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_Log) {
             Intent intent = new Intent(this, ArrayLog.class);
+            ArrayBook();
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.action_Search) {
+            Intent intent = new Intent(this, SeachActivity.class);
             ArrayBook();
             startActivity(intent);
             return true;

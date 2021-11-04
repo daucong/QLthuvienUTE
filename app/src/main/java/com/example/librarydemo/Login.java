@@ -40,12 +40,12 @@ public class Login extends Activity {
 
         final SQLSever sqlSever = new SQLSever(this);
         ArrayList<User> list = new ArrayList<>();
-       User s = new User("daucong", "Đậu Thái Công", "dauthaicong11092001@gmail.com", "110901", "Admin", 3);
+       User s = new User("daucong", "Đậu Thái Công", "daucong@gmail.com", "110901", "Admin", 3);
        sqlSever.AddUser(s);
-
-        SQLLog sqlLog = new SQLLog(this);
-        Log log= new Log("daucong", 5, "Sức Mạnh Của Ngôn Từ", "20191111");
-        sqlLog.AddLog(log);
+//
+//        SQLLog sqlLog = new SQLLog(this);
+//        Log log= new Log("daucong", 5, "Sức Mạnh Của Ngôn Từ", "20191111");
+//        sqlLog.AddLog(log);
         //---------------------------------------------------------------------------
         password.setInputType(InputType.TYPE_CLASS_TEXT |//ẩn Text để làm mật khẩu
                 InputType.TYPE_TEXT_VARIATION_PASSWORD);

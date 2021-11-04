@@ -6,4 +6,9 @@
         android:orderInCategory="100"
         android:title="Sách Đã Mượn"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Search"
+        android:orderInCategory="100"
+        android:title="Tìm kiếm sách"
+        app:showAsAction="never" />
 </menu>

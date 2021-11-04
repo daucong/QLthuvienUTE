@@ -44,6 +44,8 @@
         android:layout_marginStart="14dp"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="12dp"
+        android:rating="4"
+        android:progressTint="@android:color/holo_orange_light"
         android:layout_toEndOf="@+id/img_hinh"
         android:layout_toRightOf="@+id/img_hinh" />
 

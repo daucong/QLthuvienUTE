@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
        // Loading_library.setImageResource();
         iconlibrary.setImageResource(R.drawable.books_library_1768);
         wellcomlibrary.setText("\"Chào mừng bạn đến với ứng dụng quản lý thư viện\"");
+        wellcomlibrary.setTextSize(30);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -36,7 +37,7 @@ public class MainActivity extends Activity {
         }, SPLASH_TIME_OUT);
     }
     public void OpenMainActivity(){
-        Intent intent = new Intent(MainActivity.this, Login.class);
+        Intent intent = new Intent(MainActivity.this, PhotoActivity.class);
         startActivity(intent);
     }
 

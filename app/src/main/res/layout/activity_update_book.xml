@@ -111,6 +111,7 @@
         android:layout_marginTop="29dp"
         android:background="@drawable/et_bg" />
 
+
     <TextView
         android:id="@+id/tt_mota"
         android:layout_width="wrap_content"
@@ -121,7 +122,6 @@
         android:text="Mô tả:"
         android:textColor="@color/white"
         android:textSize="20dp" />
-
 
     <EditText
         android:id="@+id/edit_mt"
@@ -143,20 +143,18 @@
         android:background="@drawable/btstyle"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="Thêm"
-        android:textColor="@color/white" />
+        android:text="Thêm" />
 
     <Button
         android:id="@+id/tt_bthuy"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edit_mt"
-        android:layout_marginLeft="-115dp"
-        android:layout_marginTop="-51dp"
+        android:layout_marginLeft="134dp"
+        android:layout_marginTop="33dp"
         android:layout_toRightOf="@id/tt_SoLuong"
         android:background="@drawable/btn_bg"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
         android:text="Thoát"
+        android:textAllCaps="false"
         android:textColor="@color/white" />
 </RelativeLayout>

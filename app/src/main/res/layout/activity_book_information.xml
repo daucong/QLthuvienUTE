@@ -27,6 +27,8 @@
         android:layout_marginStart="9dp"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="26dp"
+        android:rating="4"
+        android:progressTint="@android:color/holo_orange_light"
         android:layout_toEndOf="@+id/tt_img_Anh"
         android:layout_toRightOf="@+id/tt_img_Anh" />
 
@@ -57,8 +59,7 @@
         android:text="Mượn"
         android:textAllCaps="false"
         android:textColor="@color/ligh_meduim_gray"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textSize="20dp" />
 
     <ImageView
         android:id="@+id/tt_img_Anh"
