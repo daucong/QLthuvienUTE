@@ -15,42 +15,43 @@ import java.util.List;
 
 public class PhotoAdapter extends PagerAdapter {
 
-    private Context mContext;
-    private List<Photo> mPhotoList;
+    private final Context mContext;
+    private final List<Photo> mListPhotos;
 
-    public PhotoAdapter(Context mContext, List<Photo> mlPhotoList) {
+    public PhotoAdapter(Context mContext, List<Photo> mListPhotos) {
         this.mContext = mContext;
-        this.mPhotoList = mPhotoList;
+        this.mListPhotos = mListPhotos;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-       View view = LayoutInflater.from(container.getContext()).inflate(R.layout.item_photo,container,false  );
+        View view = LayoutInflater.from(container.getContext()).inflate(R.layout.item_photo, container, false);
         ImageView imgPhotos = view.findViewById(R.id.img_photo);
 
-        Photo photo = mPhotoList.get(position);
-        if (photo != null){
-            Glide.with( view ).load( photo.getResourceID() ).into( imgPhotos );
+
+        Photo  photo = mListPhotos.get(position);
+        if(photo != null){
+            Glide.with(mContext).load(photo.getResourceID()).into(imgPhotos);
         }
 
+        //Add view to ViewGroup
         container.addView(view);
-        return  view;
+
+        return view;
     }
 
     @Override
     public int getCount() {
-        try {
-            return mPhotoList.size();
-        }catch (NullPointerException exception){
-            return 0;
+        if(mListPhotos != null){
+            return mListPhotos.size();
         }
-
+        return 0;
     }
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view==object;
+        return view == object;
     }
 
     @Override

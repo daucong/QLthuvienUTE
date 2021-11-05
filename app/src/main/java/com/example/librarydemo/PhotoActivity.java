@@ -9,51 +9,52 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.librarydemo.DBLog.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
 
 public class PhotoActivity extends AppCompatActivity {
+
+
     private ViewPager viewPager;
     private CircleIndicator circleIndicator;
-    private PhotoAdapter photoAdapter;
+    private PhotoAdapter photopAdapter;
     private Button btn_boqua;
-
-
     @Override
-    protected void onCreate(@Nullable  Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider_photo);
 
         viewPager = findViewById(R.id.viewpager);
         circleIndicator = findViewById(R.id.circleIndicator);
-        photoAdapter = new PhotoAdapter(this, getListPhoto());
-        viewPager.setAdapter(photoAdapter);
-        circleIndicator.setViewPager( viewPager );
-        photoAdapter.registerDataSetObserver( circleIndicator.getDataSetObserver() );
+        photopAdapter = new PhotoAdapter(this, getListPhoto());
+        viewPager.setAdapter(photopAdapter);
+        circleIndicator.setViewPager(viewPager);
+        photopAdapter.registerDataSetObserver(circleIndicator.getDataSetObserver());
 
-        btn_boqua = findViewById(R.id.btn_boqua);
-        btn_boqua.setOnClickListener(new View.OnClickListener() {
+        btn_boqua = findViewById( R.id.btn_boqua );
+        btn_boqua.setOnClickListener( new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 OpenLogin();
             }
-        });
-
+        } );
     }
 
     private void OpenLogin() {
-        Intent intent = new Intent(PhotoActivity.this, Login.class);
-        startActivity(intent);
-        finish();
+        Intent intent= new Intent(PhotoActivity.this, Login.class );
+        startActivity( intent );
     }
 
-    private List<Photo> getListPhoto() {
-    List<Photo> list = new ArrayList<>();
-    list.add( new Photo(R.drawable.slider_img1));
-    list.add(new Photo(R.drawable.slider_img2));
-    list.add(new Photo(R.drawable.slider_img3));
-    return  list;
+
+    private List<Photo> getListPhoto(){
+        List<Photo> list = new ArrayList<>();
+        list.add(new Photo(R.drawable.slider_img1));
+        list.add(new Photo(R.drawable.slider_img2));
+        list.add(new Photo(R.drawable.slider_img3));
+        return  list;
     }
 }
