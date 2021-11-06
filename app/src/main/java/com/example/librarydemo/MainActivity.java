@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
         }, SPLASH_TIME_OUT);
     }
     public void OpenMainActivity(){
-        Intent intent = new Intent(MainActivity.this, Login.class);
+        Intent intent = new Intent(MainActivity.this, PhotoActivity.class);
         startActivity(intent);
     }
 
