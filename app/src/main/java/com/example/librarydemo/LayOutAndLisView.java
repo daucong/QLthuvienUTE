@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +20,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.librarydemo.DBBook.Book;
 import com.example.librarydemo.DBBook.BookAdapter;
+import com.example.librarydemo.DBLog.Log;
 import com.example.librarydemo.DBUser.User;
 import com.example.librarydemo.Database.SQLBook;
+import com.example.librarydemo.Database.SQLLog;
 import com.example.librarydemo.Database.SQLSever;
 import com.google.android.material.navigation.NavigationView;
 
@@ -84,21 +87,7 @@ public class LayOutAndLisView extends AppCompatActivity
 
     public void ArrayBook(){
         SQLBook sqlBook = new SQLBook(this);
-        ArrayList<Book> book = new ArrayList<>();
-        book.add(new Book(0, "Để Con Được Ốm", "Sách Tự Lực", "Uyên Bùi - BS. Trí Đoàn","2016",R.drawable.book_0, 100));
-        book.add(new Book(1, "Đọc Vị Bất Kỳ Ai", "Sách Tự Lực", "TS. David J. Lieberman","2015",R.drawable.book_1, 100));
-        book.add(new Book(2, "Nghệ Thuật Bán Hàng Bậc Cao", "Nghề Bán Hàng", "Zig Zig Lar","2008",R.drawable.book_2, 100));
-        book.add(new Book(3, "Dấn Thân", "Tiểu Sử", "Sheryl Sandberg","2014",R.drawable.book_3, 100));
-        book.add(new Book(4, "Sức Mạnh Của Ngôn Từ", "Văn học", "Vô Danh","TB-2018",R.drawable.book_4, 100));
-        book.add(new Book(5, "Đắc Nhân Tâm", "Phi Hư Cấu", "Dale Carnegie","2013",R.drawable.book_5, 100));
-        book.add(new Book(6, "Truyện kiều", "Tiểu Thuyết", "Nguyễn Du","1832",R.drawable.book_6, 100));
-        book.add(new Book(7, "Sức Mạnh Của Ngôn Từ", "Văn học", "Vô Danh","TB-2018",R.drawable.book_7, 100));
-        book.add(new Book(8, "Đắc Nhân Tâm", "Phi Hư Cấu", "Dale Carnegie","2013",R.drawable.book_8, 100));
-        book.add(new Book(9, "Nhà Giả Kim", "Tiểu Thuyết", "Paulo Coelho","2013",R.drawable.book_9, 100));
-            book.add(new Book(10, "Nhà Giả Kim", "Tiểu Thuyết", "Paulo Coelho","2013",R.drawable.book_10, 100));
-        for(Book x: book){
-            sqlBook.AddBook(x);
-        }
+        ArrayList<Book> book = sqlBook.getAllBook();
         adapter = new BookAdapter(this, R.layout.elemen_book, book);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -108,8 +97,38 @@ public class LayOutAndLisView extends AppCompatActivity
                 OpenThongTinSach();
             }
         });
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                AlertDialog.Builder b=new AlertDialog.Builder(LayOutAndLisView.this);
+                b.setTitle("Delete");
+                b.setMessage("Bạn có muốn Xóa Sách \"" + book.get(position).getBookID() + "\" ?");
+                b.setIcon(R.drawable.icon_delete);
+                b.setPositiveButton("Yes", new DialogInterface. OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        sqlBook.DeleteBook(book.get(position));
+                        Toast.makeText(LayOutAndLisView.this, "Xóa Thành Công", Toast.LENGTH_SHORT).show();
+                        reset();
+                    }});
+                b.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.cancel();
+                    }
+                });
+                b.create().show();
+                return false;
+            }
+        });
     }
-
+    public void reset(){
+        Intent intent = new Intent(this, LayOutAndLisView.class);
+        startActivity(intent);
+        finish();
+    }
     public void OpenThongTinSach(){
         Intent intent = new Intent(this, BookInformation.class);
         startActivity(intent);
