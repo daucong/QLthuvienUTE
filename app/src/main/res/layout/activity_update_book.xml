@@ -18,92 +18,72 @@
         android:src="@drawable/book_1" />
 
     <TextView
-        android:id="@+id/tt_TenSach"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="27dp"
-        android:layout_marginTop="53dp"
-        android:layout_toRightOf="@id/tt_img_Anh"
-        android:text="Tên Sách"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/tt_TheLoai"
+        android:id="@+id/tt_Tensach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="25dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="200dp"
-        android:text="Thể Loại:"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="239dp"
+        android:text="Tên sách:"
         android:textColor="@color/white"
         android:textSize="20dp" />
-
-    <EditText
-        android:id="@+id/edit_tl"
-        android:layout_width="250dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/et_bg" />
 
     <TextView
-        android:id="@+id/tt_TacGia"
+        android:id="@+id/tt_Theloai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tt_TheLoai"
+        android:layout_below="@+id/tt_Tensach"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="30dp"
-        android:text="Tác Giả:"
+        android:layout_marginTop="36dp"
+        android:text="Thể loại:"
         android:textColor="@color/white"
         android:textSize="20dp" />
-
-    <EditText
-        android:id="@+id/edit_tg"
-        android:layout_width="250dp"
-        android:layout_height="29dp"
-        android:layout_below="@+id/edit_tl"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/et_bg" />
 
     <TextView
         android:id="@+id/tt_NamXB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tt_TacGia"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/tt_Theloai"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="36dp"
         android:text="Năm XB:"
         android:textColor="@color/white"
         android:textSize="20dp" />
 
-    <EditText
-        android:id="@+id/edit_nxb"
-        android:layout_width="250dp"
-        android:layout_height="29dp"
-        android:layout_below="@+id/edit_tg"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/et_bg" />
-
     <TextView
-        android:id="@+id/tt_SoLuong"
+        android:id="@+id/tt_tacgia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tt_NamXB"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="30dp"
-        android:text="Số Lượng:"
+        android:layout_below="@+id/tt_NamXB"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="27dp"
+        android:text="Tác giả:"
         android:textColor="@color/white"
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/edit_sl"
+        android:id="@+id/edit_tensach"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tt_btThem"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="124dp"
+        android:layout_toEndOf="@+id/tt_Tensach"
+        android:layout_toRightOf="@+id/tt_Tensach"
+        android:background="@drawable/et_bg" />
+
+    <EditText
+        android:id="@+id/edit_tacgia"
         android:layout_width="250dp"
         android:layout_height="30dp"
         android:layout_below="@+id/edit_nxb"
@@ -111,50 +91,77 @@
         android:layout_marginTop="29dp"
         android:background="@drawable/et_bg" />
 
-
-    <TextView
-        android:id="@+id/tt_mota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tt_SoLuong"
-        android:layout_marginLeft="25dp"
+    <EditText
+        android:id="@+id/edit_soluong"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/edit_tacgia"
+        android:layout_marginLeft="140dp"
         android:layout_marginTop="30dp"
-        android:text="Mô tả:"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:background="@drawable/et_bg" />
 
     <EditText
-        android:id="@+id/edit_mt"
+        android:id="@+id/edit_nxb"
         android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/edit_sl"
+        android:layout_height="29dp"
+        android:layout_below="@+id/edit_theloai"
         android:layout_marginLeft="140dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/et_bg" />
+
+    <EditText
+        android:id="@+id/edit_theloai"
+        android:layout_width="250dp"
+        android:layout_height="29dp"
+        android:layout_below="@+id/edit_tensach"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/et_bg" />
+
+
+    <TextView
+        android:id="@+id/tt_SoLuong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tt_tacgia"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:text="Số Lượng:"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/tt_btThem"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_mt"
-        android:layout_marginLeft="159dp"
-        android:layout_marginTop="-545dp"
-        android:layout_toRightOf="@id/tt_SoLuong"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="107dp"
+        android:layout_marginLeft="107dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_toEndOf="@+id/tt_img_Anh"
+        android:layout_toRightOf="@+id/tt_img_Anh"
         android:background="@drawable/btstyle"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="Thêm" />
+        android:text="Thêm"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/tt_bthuy"
         android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_mt"
-        android:layout_marginLeft="134dp"
-        android:layout_marginTop="33dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/edit_soluong"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="59dp"
         android:layout_toRightOf="@id/tt_SoLuong"
         android:background="@drawable/btn_bg"
         android:text="Thoát"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 </RelativeLayout>
