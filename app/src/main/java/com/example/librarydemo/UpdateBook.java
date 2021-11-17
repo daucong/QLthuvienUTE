@@ -9,18 +9,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.librarydemo.DBBook.Book;
+import com.example.librarydemo.Database.SQLBook;
+
+import java.util.ArrayList;
 
 public class UpdateBook extends AppCompatActivity {
     Button btnThem, btnThoat;
     ImageView imvHinh;
     EditText edTensach, edTheLoai, edNamXB, edTacGia, edSoluong;
+    SQLBook sqlBook = new SQLBook(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_book);
+
         Anhxa();
 
 
@@ -31,6 +39,21 @@ public class UpdateBook extends AppCompatActivity {
                 startActivityForResult(intent, 8888);
             }
         });
+        btnThem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String BookTitle_Book = edTensach.getText().toString();
+                String TheLoai_Book = edTensach.getText().toString();
+                String TacGia_Book = edTensach.getText().toString();
+                String NamXB_Book = edTensach.getText().toString();
+                Book book = new Book(BookTitle_Book,TheLoai_Book,TacGia_Book,NamXB_Book,R.drawable.book_1,100);
+
+                sqlBook.AddBook(book);
+
+                Toast.makeText(UpdateBook.this, "Thêm Thành Công", Toast.LENGTH_SHORT).show();
+            }
+        });
+        ArrayList<Book> book = sqlBook.getAllBook();
     }
 
     @Override
