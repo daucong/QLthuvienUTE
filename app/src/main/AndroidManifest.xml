@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.librarydemo">
+    package="com.example.QLThuVien">
 
     <application
         android:allowBackup="true"
@@ -11,38 +11,38 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".SupportActivity"
+            android:name="com.example.QLThuVien.SupportActivity"
             android:exported="true" />
         <activity
-            android:name=".SeachActivity"
+            android:name="com.example.QLThuVien.SeachActivity"
             android:exported="true" />
         <activity
-            android:name=".Activity_home1"
+            android:name="com.example.QLThuVien.Activity_home1"
             android:exported="true" />
-        <activity android:name=".Login" />
-        <activity android:name=".NewPassword" />
-        <activity android:name=".CodeForgotPassword" />
+        <activity android:name="com.example.QLThuVien.Login" />
+        <activity android:name="com.example.QLThuVien.NewPassword" />
+        <activity android:name="com.example.QLThuVien.CodeForgotPassword" />
         <activity
-            android:name=".ForgotPassword"
-            android:parentActivityName=".Login" />
-        <activity android:name=".UpdateBook" />
-        <activity android:name=".ArrayLog" />
-        <activity android:name=".ChangPass" />
-        <activity android:name=".UserInformation" />
-        <activity android:name=".LogInformation" />
-        <activity android:name=".BookInformation" />
+            android:name="com.example.QLThuVien.ForgotPassword"
+            android:parentActivityName="com.example.QLThuVien.Login" />
+        <activity android:name="com.example.QLThuVien.UpdateBook" />
+        <activity android:name="com.example.QLThuVien.ArrayLog" />
+        <activity android:name="com.example.QLThuVien.ChangPass" />
+        <activity android:name="com.example.QLThuVien.UserInformation" />
+        <activity android:name="com.example.QLThuVien.LogInformation" />
+        <activity android:name="com.example.QLThuVien.BookInformation" />
         <activity
-            android:name=".LayOutAndLisView"
+            android:name="com.example.QLThuVien.LayOutAndLisView"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.QLThuVien.SignUp" />
+        <activity android:name="com.example.QLThuVien.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PhotoActivity" />
+        <activity android:name="com.example.QLThuVien.PhotoActivity" />
     </application>
 
 </manifest>
