@@ -5,28 +5,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.QLThuVien.R;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class BookAdapter extends BaseAdapter {
+public class BookAdapter extends BaseAdapter implements Filterable {
     private Context context;
     private int layout;
-    private List<Book> list;
+    private ArrayList<Book> modelarrayList = new ArrayList<>();
+    private ArrayList<Book> modelarrayListFiler;
 
-    public BookAdapter(Context context, int layout, List<Book> list) {
+
+    public BookAdapter(Context context, int layout, ArrayList<Book> modelarrayList) {
         this.context = context;
         this.layout = layout;
-        this.list = list;
+        this.modelarrayList = modelarrayList;
+        this.modelarrayListFiler = modelarrayList;
     }
 
     @Override
     public int getCount() {
-        return list.size();
+        return modelarrayList.size();
     }
 
     @Override
@@ -37,6 +43,41 @@ public class BookAdapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return 0;
+    }
+
+    @Override
+    public Filter getFilter() {
+        Filter filter = new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults filterResults = new FilterResults();
+                ArrayList<Book> bookArrayListfilter = new ArrayList<>();
+                String searchText = constraint.toString().toLowerCase();
+                String[] sqlit=searchText.split(",");
+                ArrayList<String> searchArr = new ArrayList<>(sqlit.length);
+                for (String tsqlit: sqlit){
+                    String trim = tsqlit.trim();
+                    if (trim.length()>0){
+                        searchArr.add(trim);
+                    }
+                    for (Book book : modelarrayListFiler){
+                        if(book.getTenSach().toLowerCase().trim().contains(searchText)){
+                            bookArrayListfilter.add(book);
+                        }
+                    }
+                }
+                filterResults.count= bookArrayListfilter.size();
+                filterResults.values = bookArrayListfilter;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                modelarrayList = (ArrayList<Book>)results.values;
+                notifyDataSetChanged();
+            }
+        };
+        return filter;
     }
 
     public class ViewAnhXa{
@@ -68,7 +109,7 @@ public class BookAdapter extends BaseAdapter {
         }
 
         //Gán Giá Trị
-        Book book = list.get(position);
+        Book book = modelarrayList.get(position);
         //Ghi giá trị vào listview
         viewAnhXa.tensach.setText(book.getTenSach());
         viewAnhXa.tacgia.setText("TG:"+book.getTacGia() + "-Năm XB:" + book.getNamXB());

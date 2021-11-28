@@ -34,7 +34,6 @@ public class Activity_home1 extends AppCompatActivity implements OnItemClickList
         list.add(new home(R.drawable.photo_picture_photo_184, "Danh mục"));
         list.add(new home(R.drawable.addressbook_addressbook_add_librodedireccion_2815, "Thêm sách"));
         list.add(new home(R.drawable.addressbook_addressbook_edition_librodedireccion_2817, "Sách đã mượn"));
-        list.add(new home(R.drawable.addressbook_addressbook_search_librodedireccion_2818, "Tìm kiếm sách"));
         list.add(new home(R.drawable.call_825, "Hỗ trợ"));
         list.add(new home(R.drawable.systemshutdown_103390, "Đăng xuất"));
         return list;
@@ -56,10 +55,6 @@ public class Activity_home1 extends AppCompatActivity implements OnItemClickList
         }
         if (a.getName()=="Sách đã mượn"){
             Intent intent = new Intent(this, ArrayLog.class); //LayOutAndLisView.class);
-            startActivity(intent);
-        }
-        if (a.getName()=="Tìm kiếm sách"){
-            Intent intent = new Intent(this, SeachActivity.class); //LayOutAndLisView.class);
             startActivity(intent);
         }
         if (a.getName()=="Hỗ trợ"){

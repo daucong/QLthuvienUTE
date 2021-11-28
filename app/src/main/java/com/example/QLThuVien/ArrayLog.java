@@ -1,5 +1,6 @@
 package com.example.QLThuVien;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.QLThuVien.DBBook.Book;
@@ -62,33 +64,32 @@ public class ArrayLog extends AppCompatActivity {
         }else{
             Toast.makeText(ArrayLog.this, "Log Rỗng!!!", Toast.LENGTH_SHORT).show();
         }
-//        lvlog.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
-//                AlertDialog.Builder b=new AlertDialog.Builder(ArrayLog.this);
-//                b.setTitle("Delete");
-//                b.setMessage("Bạn có muốn Xóa Sách \"" + log.get(position).getBookTitle() + "\" ?");
-//                b.setIcon(R.drawable.icon_delete);
-//                b.setPositiveButton("Yes", new DialogInterface. OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which)
-//                    {
-//                        sqlLog.DeleteLog(log.get(position));
-//                        Toast.makeText(ArrayLog.this, "Xóa Thành Công", Toast.LENGTH_SHORT).show();
-//                        ResetSach();
-//                        finish();
-//                    }});
-//                b.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which)
-//                    {
-//                        dialog.cancel();
-//                    }
-//                });
-//                b.create().show();
-//                return false;
-//            }
-//        });
+        lvlog.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                AlertDialog.Builder b=new AlertDialog.Builder(ArrayLog.this);
+                b.setTitle("Delete");
+                b.setMessage("Bạn có muốn Xóa Sách \"" + log.get(position).getBookTitle() + "\" ?");
+                b.setIcon(R.drawable.icon_delete);
+                b.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                sqlLog.DeleteLog(log.get(position));
+                                Toast.makeText(ArrayLog.this, "Xóa Thành Công", Toast.LENGTH_SHORT).show();
+                                ResetSach();
+                                finish();
+                            }
+                        });
+                        b.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                b.create().show();
+                return false;
+            }
+        });
 
         lvlog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

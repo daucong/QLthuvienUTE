@@ -14,9 +14,6 @@
             android:name="com.example.QLThuVien.SupportActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.QLThuVien.SeachActivity"
-            android:exported="true" />
-        <activity
             android:name="com.example.QLThuVien.Activity_home1"
             android:exported="true" />
         <activity android:name="com.example.QLThuVien.Login" />

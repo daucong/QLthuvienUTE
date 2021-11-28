@@ -5,15 +5,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -22,7 +23,6 @@ import com.example.QLThuVien.DBBook.Book;
 import com.example.QLThuVien.DBBook.BookAdapter;
 import com.example.QLThuVien.DBUser.User;
 import com.example.QLThuVien.Database.SQLBook;
-import com.example.QLThuVien.Database.SQLSever;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -30,10 +30,11 @@ import java.util.ArrayList;
 public class LayOutAndLisView extends AppCompatActivity
 
         implements NavigationView.OnNavigationItemSelectedListener {
-
     private ListView lv;
 
     public static ArrayList<Book> Book_Deefault;
+
+
 
     public static ArrayList<Book> getBook_Deefault() {
         return Book_Deefault;
@@ -42,7 +43,7 @@ public class LayOutAndLisView extends AppCompatActivity
     public static void setBook_Deefault(ArrayList<Book> book_Deefault) {
         Book_Deefault = book_Deefault;
     }
-    private BookAdapter adapter;
+    BookAdapter adapter;
     //---------------User hiện tại------------------------------------
     public static User user_pro;
 
@@ -83,6 +84,8 @@ public class LayOutAndLisView extends AppCompatActivity
 
     }
 
+
+
     public void ArrayBook(){
         SQLBook sqlBook = new SQLBook(this);
         ArrayList<Book> book = sqlBook.getAllBook();
@@ -122,6 +125,7 @@ public class LayOutAndLisView extends AppCompatActivity
             }
         });
     }
+
     public void reset(){
         Intent intent = new Intent(this, LayOutAndLisView.class);
         startActivity(intent);
@@ -134,6 +138,7 @@ public class LayOutAndLisView extends AppCompatActivity
     public void AnhXa(){
         lv= (ListView) findViewById(R.id.arraybook);
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -142,49 +147,6 @@ public class LayOutAndLisView extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.lay_out_and_lis_view, menu);
-
-
-        Intent intent = getIntent();
-        String name = Login.EXTRA_USER;
-        final SQLSever sqlSever = new SQLSever(this);
-        TextView ten = (TextView) findViewById(R.id.Text_Name);
-        TextView email = (TextView) findViewById(R.id.Text_Gmail);
-        TextView trangthai = (TextView) findViewById(R.id.Text_TrangThai);
-
-        User s = sqlSever.getUser(name);
-
-        ten.setText(s.getFullname());
-        email.setText(s.getGmail());
-        trangthai.setText(s.getStatus());
-        this.setUser(s);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_Log) {
-            Intent intent = new Intent(this, ArrayLog.class);
-            ArrayBook();
-            startActivity(intent);
-            return true;
-        }
-        if (id == R.id.action_Search) {
-            Intent intent = new Intent(this, SeachActivity.class);
-            ArrayBook();
-            startActivity(intent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -229,5 +191,26 @@ public class LayOutAndLisView extends AppCompatActivity
     public void OpenLogin(){
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.search, menu);
+        MenuItem menuItem = menu.findItem(R.id.search);
+        SearchView searchView= (SearchView)menuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+
+                return true;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 }
