@@ -66,7 +66,6 @@ public class Login extends Activity {
                         if(s.getPassword().equals(pass)){
                             EXTRA_USER = name;
                             Toast.makeText( Login.this, "Đăng nhập thành công ^.^", Toast.LENGTH_SHORT).show();
-                            AddBook();
                             password.setText("");
                             username.setText("");
                             Login(s);
@@ -90,24 +89,6 @@ public class Login extends Activity {
                 OpenForgotPassword();
             }
         });
-    }
-    public void AddBook(){
-        SQLBook sqlBook = new SQLBook(this);
-        ArrayList<Book> book = new ArrayList<>();
-        book.add(new Book(0, "Để Con Được Ốm", "Sách Tự Lực", "Uyên Bùi - BS. Trí Đoàn","2016",R.drawable.book_0, 100));
-        book.add(new Book(1, "Đọc Vị Bất Kỳ Ai", "Sách Tự Lực", "TS. David J. Lieberman","2015",R.drawable.book_1, 100));
-        book.add(new Book(2, "Nghệ Thuật Bán Hàng Bậc Cao", "Nghề Bán Hàng", "Zig Zig Lar","2008",R.drawable.book_2, 100));
-        book.add(new Book(3, "Dấn Thân", "Tiểu Sử", "Sheryl Sandberg","2014",R.drawable.book_3, 100));
-        book.add(new Book(4, "Sức Mạnh Của Ngôn Từ", "Văn học", "Vô Danh","TB-2018",R.drawable.book_4, 100));
-        book.add(new Book(5, "Đắc Nhân Tâm", "Phi Hư Cấu", "Dale Carnegie","2013",R.drawable.book_5, 100));
-        book.add(new Book(6, "Truyện kiều", "Tiểu Thuyết", "Nguyễn Du","1832",R.drawable.book_6, 100));
-        book.add(new Book(7, "Sức Mạnh Của Ngôn Từ", "Văn học", "Vô Danh","TB-2018",R.drawable.book_7, 100));
-        book.add(new Book(8, "Đắc Nhân Tâm", "Phi Hư Cấu", "Dale Carnegie","2013",R.drawable.book_8, 100));
-        book.add(new Book(9, "Nhà Giả Kim", "Tiểu Thuyết", "Paulo Coelho","2013",R.drawable.book_9, 100));
-        book.add(new Book(10, "Nhà Giả Kim", "Tiểu Thuyết", "Paulo Coelho","2013",R.drawable.book_10, 100));
-        for(Book x: book){
-            sqlBook.AddBook(x);
-        }
     }
     public void OpenSignUp(){
         Intent intent = new Intent( Login.this, SignUp.class);

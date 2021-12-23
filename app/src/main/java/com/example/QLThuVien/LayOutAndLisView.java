@@ -23,6 +23,7 @@ import com.example.QLThuVien.DBBook.Book;
 import com.example.QLThuVien.DBBook.BookAdapter;
 import com.example.QLThuVien.DBUser.User;
 import com.example.QLThuVien.Database.SQLBook;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -80,7 +81,14 @@ public class LayOutAndLisView extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
+        FloatingActionButton fab =findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LayOutAndLisView.this, UpdateBook.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

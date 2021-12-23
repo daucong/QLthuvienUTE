@@ -8,5 +8,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="lorem_text">Bản thân nỗi đau có thể rất đau, nhưng nguyên nhân chính là đau, nhưng tôi cho nó thời gian để rơi vào đó như một nỗi đau và nỗi đau lớn nào đó. Để có ít sự ham mê nhất, bất kỳ ai trong chúng ta cũng có thể thực hiện bất kỳ trường phái luật nào ngoại trừ việc thiết lập các mục tiêu của nó Goodsoequat. Đau đớn sẽ lấp đầy khoái cảm nhưng đau đớn trong cơn sướng muốn thành cơn đau, nhưng không ai thoát khỏi cơn đau. Đau đớn sẽ lấp đầy khoái cảm nhưng đau đớn trong cơn sướng muốn thành cơn đau, nhưng không ai thoát khỏi cơn đau.</string>
+    <string name="select_image">Select image</string>
+    <string name="intent_type">image/*</string>
 </resources>
 

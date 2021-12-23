@@ -4,13 +4,13 @@ import android.graphics.Bitmap;
 
 public class Book {
     private int BookID;
-    private String TenSach, TheLoai, TacGia, NamXB;
-    private int ImgBook, SoLuong;
+    private String TenSach, TheLoai, TacGia, NamXB,ImgBook;
+    private int SoLuong;
 
     public Book() {
     }
 
-    public Book(int bookID, String tenSach, String theLoai, String tacGia, String namXB, int imgBook, int soLuong) {
+    public Book(int bookID, String tenSach, String theLoai, String tacGia, String namXB, String imgBook, int soLuong) {
         BookID = bookID;
         TenSach = tenSach;
         TheLoai = theLoai;
@@ -20,7 +20,7 @@ public class Book {
         SoLuong = soLuong;
     }
 
-    public Book(String tenSach, String theLoai, String tacGia, String namXB, int imgBook, int soLuong) {
+    public Book(String tenSach, String theLoai, String tacGia, String namXB, String imgBook, int soLuong) {
         TenSach = tenSach;
         TheLoai = theLoai;
         TacGia = tacGia;
@@ -69,11 +69,11 @@ public class Book {
         NamXB = namXB;
     }
 
-    public int getImgBook() {
+    public String getImgBook() {
         return ImgBook;
     }
 
-    public void setImgBook(int imgBook) {
+    public void setImgBook(String imgBook) {
         ImgBook = imgBook;
     }
 

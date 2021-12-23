@@ -1,6 +1,7 @@
 package com.example.QLThuVien.DBBook;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -115,7 +116,9 @@ public class BookAdapter extends BaseAdapter implements Filterable {
         viewAnhXa.tacgia.setText("TG:"+book.getTacGia() + "-Năm XB:" + book.getNamXB());
         viewAnhXa.theloai.setText(book.getTheLoai());
         viewAnhXa.soluong.setText( "SL:"+ String.valueOf(book.getSoLuong()));
-        viewAnhXa.imgsach.setImageResource(book.getImgBook());
+
+
+        viewAnhXa.imgsach.setImageURI(Uri.parse(book.getImgBook()));
 
         return convertView;
     }

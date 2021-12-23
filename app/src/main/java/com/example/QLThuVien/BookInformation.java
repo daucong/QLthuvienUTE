@@ -3,6 +3,7 @@ package com.example.QLThuVien;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,7 +49,7 @@ public class BookInformation extends AppCompatActivity {
         final int bookid = LayOutAndLisView.getBookid();
         final Book book = sqlBook.getBook(bookid);
 
-        tt_imgSach.setImageResource(book.getImgBook());
+        tt_imgSach.setImageURI(Uri.parse(book.getImgBook()));
         tt_tensach.setText(book.getTenSach());
         tt_theloai.setText("Thể Loại : " + book.getTheLoai());
         tt_tacgia.setText("Tác Giả : " + book.getTacGia());

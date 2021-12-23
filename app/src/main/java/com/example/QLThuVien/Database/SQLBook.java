@@ -39,7 +39,7 @@ public class SQLBook extends SQLiteOpenHelper {
                 TheLoai_Book + " TEXT, " +
                 TacGia_Book + " TEXT, " +
                 NamXB_Book + " TEXT, " +
-                ImgBook_Book + " integer, " +
+                ImgBook_Book + " TEXT, " +
                 SoLuong_Book + " integer)";
         db.execSQL(Create_Table_book);
     }
@@ -74,7 +74,7 @@ public class SQLBook extends SQLiteOpenHelper {
             s.setTheLoai(cursor.getString(2));
             s.setTacGia(cursor.getString(3));
              s.setNamXB(cursor.getString(4));
-             s.setImgBook(cursor.getInt(5));
+             s.setImgBook(cursor.getString(5));
              s.setSoLuong(cursor.getInt(6));
         }else{
             s = null;
@@ -94,7 +94,7 @@ public class SQLBook extends SQLiteOpenHelper {
                 for (cursor.move(0); cursor.moveToNext(); cursor.isAfterLast()) {
                     list.add(new Book(cursor.getInt(0), cursor.getString(1),
                             cursor.getString(2), cursor.getString(3), cursor.getString(4),
-                            cursor.getInt(5), cursor.getInt(6)));
+                            cursor.getString(5), cursor.getInt(6)));
                 }
             }
         }

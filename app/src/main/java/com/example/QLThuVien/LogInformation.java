@@ -1,5 +1,6 @@
 package com.example.QLThuVien;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class LogInformation extends AppCompatActivity {
             }
         }
 
-        img.setImageResource(book.getImgBook());
+        img.setImageURI(Uri.parse(book.getImgBook()));
         booktitle.setText(log.getBookTitle());
         booktitle2.setText(log.getBookTitle());
         logid.setText(String.valueOf(log.getLogID()));
