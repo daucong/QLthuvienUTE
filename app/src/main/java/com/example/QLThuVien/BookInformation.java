@@ -98,9 +98,9 @@ public class BookInformation extends AppCompatActivity {
         return getdate;
     }
     public void Reset(){
-        Intent intent = new Intent( BookInformation.this, BookInformation.class);
+        Intent intent = new Intent( BookInformation.this, ArrayLog.class);
         startActivity(intent);
         finish();
     }
 
-    }
+}

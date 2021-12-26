@@ -80,7 +80,8 @@
         android:layout_marginTop="124dp"
         android:layout_toEndOf="@+id/tt_Tensach"
         android:layout_toRightOf="@+id/tt_Tensach"
-        android:background="@drawable/et_bg" />
+        android:background="@drawable/et_bg"
+        android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/edit_tacgia"
@@ -89,7 +90,8 @@
         android:layout_below="@+id/edit_nxb"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="29dp"
-        android:background="@drawable/et_bg" />
+        android:background="@drawable/et_bg"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/edit_soluong"
@@ -98,7 +100,8 @@
         android:layout_below="@+id/edit_tacgia"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/et_bg" />
+        android:background="@drawable/et_bg"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/edit_nxb"
@@ -107,7 +110,8 @@
         android:layout_below="@+id/edit_theloai"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/et_bg" />
+        android:background="@drawable/et_bg"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/edit_theloai"
@@ -116,7 +120,8 @@
         android:layout_below="@+id/edit_tensach"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/et_bg" />
+        android:background="@drawable/et_bg"
+        android:textColor="@color/white" />
 
 
     <TextView
@@ -149,7 +154,8 @@
         android:paddingRight="10dp"
         android:text="Thêm"
         android:textAlignment="center"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:gravity="center_horizontal" />
 
     <Button
         android:id="@+id/tt_bthuy"
@@ -163,5 +169,6 @@
         android:text="Thoát"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:gravity="center_horizontal" />
 </RelativeLayout>
