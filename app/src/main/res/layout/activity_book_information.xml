@@ -10,12 +10,12 @@
         android:id="@+id/item_book_pagesrev2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/item_book_ratingbar2"
-        android:layout_marginStart="-101dp"
-        android:layout_marginLeft="-101dp"
-        android:layout_marginTop="127dp"
-        android:layout_toEndOf="@+id/tt_img_Anh"
-        android:layout_toRightOf="@+id/tt_img_Anh"
+        android:layout_below="@+id/tt_MoTa"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
         android:text="225 pages | 23 review" />
 
     <RatingBar
@@ -23,38 +23,34 @@
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tt_TenSach"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="89dp"
-        android:layout_toEndOf="@+id/tt_img_Anh"
-        android:layout_toRightOf="@+id/tt_img_Anh"
+        android:layout_below="@id/tt_TheLoai"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/tt_img_Anh"
         android:progressTint="@android:color/holo_orange_light"
-        android:rating="4" />
+        android:rating="4"
+        android:text="Năm xuất bản" />
 
     <TextView
         android:id="@+id/item_book_score2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/item_book_ratingbar2"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
-        android:layout_marginBottom="-2dp"
-        android:layout_toEndOf="@+id/item_book_ratingbar2"
-        android:layout_toRightOf="@+id/item_book_ratingbar2"
+        android:layout_below="@id/tt_TheLoai"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/item_book_ratingbar2"
         android:text="score" />
 
     <Button
         android:id="@+id/tt_btMuon"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/tt_TenSach"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="146dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
+        android:layout_below="@id/tt_img_Anh"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btstyle"
         android:text="Mượn"
         android:textAllCaps="false"
@@ -67,72 +63,64 @@
         android:layout_height="150dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/tt_TenSach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_toRightOf="@id/tt_img_Anh"
         android:text="Tên Sách"
-        android:textSize="20dp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tt_TheLoai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="60dp"
-        android:text="Thể Loại:"
-        android:textStyle="bold" />
+        android:layout_below="@id/tt_NamXB"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/tt_img_Anh"
+        android:text="Thể loại" />
 
     <TextView
         android:id="@+id/tt_TacGia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tt_TheLoai"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="70dp"
-        android:layout_toEndOf="@+id/tt_img_Anh"
-        android:layout_toRightOf="@+id/tt_img_Anh"
-        android:text="Tác Giả:"
-        android:textStyle="bold" />
+        android:layout_below="@id/item_book_ratingbar2"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/tt_img_Anh"
+        android:text="Tác Giả:" />
 
     <TextView
         android:id="@+id/tt_NamXB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tt_TacGia"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="-88dp"
-        android:layout_toEndOf="@+id/tt_img_Anh"
-        android:layout_toRightOf="@+id/tt_img_Anh"
-        android:text="Năm XB:"
-        android:textStyle="bold" />
+        android:layout_below="@id/tt_TenSach"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="9dp"
+        android:layout_toRightOf="@id/tt_img_Anh"
+        android:text="Năm xuất bản" />
 
     <TextView
         android:id="@+id/tt_SoLuong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tt_NamXB"
-        android:layout_marginStart="-103dp"
-        android:layout_marginLeft="-103dp"
-        android:layout_marginTop="78dp"
-        android:layout_toEndOf="@+id/tt_img_Anh"
-        android:layout_toRightOf="@+id/tt_img_Anh"
-        android:text="Số Lượng:"
-        android:textStyle="bold" />
+        android:layout_below="@id/tt_TacGia"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/tt_img_Anh"
+        android:text="Số Lượng:" />
 
     <TextView
         android:id="@+id/tt_MoTa"

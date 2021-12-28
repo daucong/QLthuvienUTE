@@ -116,6 +116,38 @@ public class SQLSever extends SQLiteOpenHelper {
             return false;
         }
     }
+    public void updatePassword(String email, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Password, password);
+        db.update(Table_Name1, values, Email+" = ?",new String[] { email });
+        db.close();
+    }
+
+    public boolean checkUser(String email){
+        String[] columns = {
+                UserID
+        };
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selection = Email + " = ?";
+        String[] selectionArgs = { email };
+
+        Cursor cursor = db.query(Table_Name1,
+                columns,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null);
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if (cursorCount > 0){
+            return true;
+        }
+        return false;
+    }
 //    public int Update(Student student){
 //        SQLiteDatabase db = this.getWritableDatabase();
 //        ContentValues values = new ContentValues();

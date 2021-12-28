@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -64,12 +65,13 @@ public class LayOutAndLisView extends AppCompatActivity
         Bookid = bookid;
     }
 
-
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lay_out_and_lis_view);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        imageView = findViewById(R.id.image_edit);
         navigationView.setNavigationItemSelectedListener(this);
         AnhXa();
         ArrayBook();
@@ -89,7 +91,12 @@ public class LayOutAndLisView extends AppCompatActivity
                 startActivity(intent);
             }
         });
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
     }
 
 
@@ -162,7 +169,10 @@ public class LayOutAndLisView extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home) {
+            Intent intent = new Intent(this, Activity_home1.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_camera) {
             Intent intent = new Intent(this, UserInformation.class);
             startActivity(intent);
         } else if (id == R.id.nav_gallery) {

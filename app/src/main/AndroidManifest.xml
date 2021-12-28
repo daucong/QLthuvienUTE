@@ -19,7 +19,6 @@
             android:exported="true" />
         <activity android:name="com.example.QLThuVien.Login" />
         <activity android:name="com.example.QLThuVien.NewPassword" />
-        <activity android:name="com.example.QLThuVien.CodeForgotPassword" />
         <activity
             android:name="com.example.QLThuVien.ForgotPassword"
             android:parentActivityName="com.example.QLThuVien.Login" />
