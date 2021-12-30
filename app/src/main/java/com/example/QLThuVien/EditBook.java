@@ -4,12 +4,9 @@ package com.example.QLThuVien;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,24 +22,22 @@ import androidx.core.content.ContextCompat;
 import com.example.QLThuVien.DBBook.Book;
 import com.example.QLThuVien.Database.SQLBook;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
-public class UpdateBook extends AppCompatActivity {
+public class EditBook extends AppCompatActivity {
     Button btnThem, btnThoat;
     ImageView imvHinh;
     Uri mPhotoUri;
     EditText edTensach, edTheLoai, edNamXB, edTacGia, edSoluong;
-    SQLBook sqlBook = new SQLBook(this);
-
+    int position;
     private boolean mContactHasChanged = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_book);
+        setContentView(R.layout.activity_edit_book);
 
         Anhxa();
-
 
         imvHinh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +46,17 @@ public class UpdateBook extends AppCompatActivity {
                 mContactHasChanged = true;
             }
         });
+        SQLBook sqlBook = new SQLBook(this);
+        position = getIntent().getIntExtra("position",0);
+        ArrayList<Book> books = sqlBook.getAllBook();
+        Book book = books.get(position);
+
+        imvHinh.setImageURI(Uri.parse(book.getImgBook()));
+        edTensach.setText(book.getTenSach());
+        edTheLoai.setText(book.getTheLoai());
+        edTacGia.setText(book.getTacGia());
+        edNamXB.setText(book.getNamXB());
+        edSoluong.setText(String.valueOf(book.getSoLuong()));
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,26 +66,26 @@ public class UpdateBook extends AppCompatActivity {
                 String NamXB_Book = edNamXB.getText().toString();
                 String SoLuong_Book = edSoluong.getText().toString() ;
 
-
                 String hinh = mPhotoUri.toString();
+
                 if(BookTitle_Book.equals("") || TheLoai_Book.equals("")|| TacGia_Book.equals("")|| NamXB_Book.equals("")|| SoLuong_Book.equals("")|| hinh.equals("")){
-                    Toast.makeText( UpdateBook.this, "Vui Lòng Điền Đủ Thông tin!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( EditBook.this, "Vui Lòng Điền Đủ Thông tin!!!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Book book = new Book(BookTitle_Book,TheLoai_Book,TacGia_Book,NamXB_Book,hinh,Integer.parseInt(SoLuong_Book));
-
-                    sqlBook.AddBook(book);
-                    Toast.makeText(UpdateBook.this, "Thêm Thành Công", Toast.LENGTH_SHORT).show();
+                    ArrayList<Book> books = sqlBook.getAllBook();
+                    Book book = books.get(position);
+                    book = new Book(book.getBookID(),BookTitle_Book,TheLoai_Book,TacGia_Book,NamXB_Book,hinh,Integer.parseInt(SoLuong_Book));
+                    sqlBook.updateBook(book);
+                    Toast.makeText(EditBook.this, "Sửa Thành Công", Toast.LENGTH_SHORT).show();
                     Log.v("Cong", hinh);
                     open();
                 }
-
             }
         });
         btnThoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UpdateBook.this, LayOutAndLisView.class);
+                Intent intent = new Intent(EditBook.this, LayOutAndLisView.class);
                 startActivity(intent);
             }
         });

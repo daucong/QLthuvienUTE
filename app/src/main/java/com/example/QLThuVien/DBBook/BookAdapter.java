@@ -1,6 +1,7 @@
 package com.example.QLThuVien.DBBook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.QLThuVien.EditBook;
+import com.example.QLThuVien.LayOutAndLisView;
 import com.example.QLThuVien.R;
 
 import java.util.ArrayList;
@@ -101,7 +104,7 @@ public class BookAdapter extends BaseAdapter implements Filterable {
             viewAnhXa.page = (TextView) convertView.findViewById(R.id.item_book_pagesrev);
             viewAnhXa.theloai = (TextView) convertView.findViewById(R.id.the_loai);
             viewAnhXa.soluong = (TextView) convertView.findViewById(R.id.so_luong);
-            viewAnhXa.imgtim = (ImageView) convertView.findViewById(R.id.imageView3);
+            viewAnhXa.imgtim = (ImageView) convertView.findViewById(R.id.image_edit);
             viewAnhXa.imgsach = (ImageView) convertView.findViewById(R.id.img_hinh);
             viewAnhXa.ratingBar = (RatingBar) convertView.findViewById(R.id.item_book_ratingbar);
             convertView.setTag(viewAnhXa);
@@ -117,9 +120,18 @@ public class BookAdapter extends BaseAdapter implements Filterable {
         viewAnhXa.theloai.setText(book.getTheLoai());
         viewAnhXa.soluong.setText( "SL:"+ String.valueOf(book.getSoLuong()));
 
-
         viewAnhXa.imgsach.setImageURI(Uri.parse(book.getImgBook()));
 
+        View finalConvertView = convertView;
+        viewAnhXa.imgtim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, EditBook.class);
+                intent.putExtra("position",position);
+                finalConvertView.getContext().startActivity(intent);
+            }
+        });
         return convertView;
+
     }
 }

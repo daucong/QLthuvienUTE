@@ -23,9 +23,9 @@ import com.example.QLThuVien.Database.SQLSever;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
-;
 
 public class BookInformation extends AppCompatActivity {
 
@@ -45,9 +45,10 @@ public class BookInformation extends AppCompatActivity {
         TextView tt_page = (TextView) findViewById(R.id.item_book_pagesrev2);
         RatingBar rb_bar = (RatingBar) findViewById(R.id.item_book_ratingbar2);
 
-        final SQLBook sqlBook = new SQLBook(this);
-        final int bookid = LayOutAndLisView.getBookid();
-        final Book book = sqlBook.getBook(bookid);
+        SQLBook sqlBook = new SQLBook(this);
+        int position = getIntent().getIntExtra("position",0);
+        ArrayList<Book> books = sqlBook.getAllBook();
+        Book book = books.get(position);
 
         tt_imgSach.setImageURI(Uri.parse(book.getImgBook()));
         tt_tensach.setText(book.getTenSach());
@@ -55,8 +56,8 @@ public class BookInformation extends AppCompatActivity {
         tt_tacgia.setText("Tác Giả : " + book.getTacGia());
         tt_namXB.setText("Năm Xuất Bản: " + book.getNamXB());
         tt_soluong.setText("Số Lượng : " + book.getSoLuong() + " Quyển");
-        final SQLSever sqlSever = new SQLSever(this);
-        final SQLLog sqlLog = new SQLLog(this);
+         SQLSever sqlSever = new SQLSever(this);
+         SQLLog sqlLog = new SQLLog(this);
         tt_muon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

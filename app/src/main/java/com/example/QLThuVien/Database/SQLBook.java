@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.QLThuVien.DBBook.Book;
 
@@ -117,6 +118,33 @@ public class SQLBook extends SQLiteOpenHelper {
         return db.update(Table_Name3,values,BookID_Book +"=?",new String[] { String.valueOf(bookid)});
 
     }
+    public void updateBook(Book book){
+        db = this.getWritableDatabase();
+        values = new ContentValues();
+        values.put(BookTitle_Book, book.getTenSach());
+        values.put(TheLoai_Book, book.getTheLoai());
+        values.put(TacGia_Book, book.getTacGia());
+        values.put(NamXB_Book,book.getNamXB());
+        values.put(ImgBook_Book,book.getImgBook());
+        values.put(SoLuong_Book,book.getSoLuong());
+        Log.v("book", String.valueOf(book.getBookID()));
+        int count = db.update(Table_Name3,values,BookID_Book + " = ?" , new String[]
+                {String.valueOf(book.getBookID())});
+        Log.v("book", String.valueOf(count));
 
+    }
+//    public int updatebook(int id, String tensach, String theloai, String Tacgia, String namxb, String Image, int solg) {
+//        db = this.getWritableDatabase();
+//        values = new ContentValues();
+//        values.put(BookTitle_Book, tensach);
+//        values.put(TheLoai_Book, theloai);
+//        values.put(TacGia_Book, Tacgia);
+//        values.put(NamXB_Book, namxb);
+//        values.put(ImgBook_Book, Image);
+//        values.put(SoLuong_Book, solg);
+//        String whereArgs[] = {""+id};
+//        int count = db.update(Table_Name3, values, BookID_Book+ "=?", whereArgs);
+//        return count;
+//    }
 }
 

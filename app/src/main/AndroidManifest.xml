@@ -28,6 +28,7 @@
         <activity android:name="com.example.QLThuVien.UserInformation" />
         <activity android:name="com.example.QLThuVien.LogInformation" />
         <activity android:name="com.example.QLThuVien.BookInformation" />
+        <activity android:name="com.example.QLThuVien.EditBook" />
         <activity
             android:name="com.example.QLThuVien.LayOutAndLisView"
             android:theme="@style/AppTheme.NoActionBar" />

@@ -84,4 +84,17 @@ public class Book {
     public void setSoLuong(int soLuong) {
         SoLuong = soLuong;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "BookID=" + BookID +
+                ", TenSach='" + TenSach + '\'' +
+                ", TheLoai='" + TheLoai + '\'' +
+                ", TacGia='" + TacGia + '\'' +
+                ", NamXB='" + NamXB + '\'' +
+                ", ImgBook='" + ImgBook + '\'' +
+                ", SoLuong=" + SoLuong +
+                '}';
+    }
 }

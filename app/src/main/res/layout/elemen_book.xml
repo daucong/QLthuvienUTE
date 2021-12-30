@@ -76,11 +76,12 @@
         android:id="@+id/image_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tac_gia"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="16dp"
         android:src="@drawable/ic_baseline_edit_24"
         app:tint="@color/gradStop" />
 

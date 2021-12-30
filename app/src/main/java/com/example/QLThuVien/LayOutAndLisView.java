@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -58,20 +59,19 @@ public class LayOutAndLisView extends AppCompatActivity
 
     //--------------Lấy Sách Đưa vào Book information---------------
     public static int Bookid;
-    public static int getBookid() {
-        return Bookid;
-    }
     public static void setBookid(int bookid) {
         Bookid = bookid;
     }
+    public static int getBookid() {
+        return Bookid;
+    }
 
-    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lay_out_and_lis_view);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        imageView = findViewById(R.id.image_edit);
+
         navigationView.setNavigationItemSelectedListener(this);
         AnhXa();
         ArrayBook();
@@ -91,12 +91,7 @@ public class LayOutAndLisView extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
 
 
@@ -109,8 +104,9 @@ public class LayOutAndLisView extends AppCompatActivity
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                LayOutAndLisView.setBookid(position+1);
-                OpenThongTinSach();
+                Intent intent = new Intent(LayOutAndLisView.this, BookInformation.class);
+                intent.putExtra("position",position);
+                startActivity(intent);
             }
         });
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -139,6 +135,7 @@ public class LayOutAndLisView extends AppCompatActivity
                 return false;
             }
         });
+
     }
 
     public void reset(){
@@ -146,10 +143,7 @@ public class LayOutAndLisView extends AppCompatActivity
         startActivity(intent);
         finish();
     }
-    public void OpenThongTinSach(){
-        Intent intent = new Intent(this, BookInformation.class);
-        startActivity(intent);
-    }
+
     public void AnhXa(){
         lv= (ListView) findViewById(R.id.arraybook);
     }
